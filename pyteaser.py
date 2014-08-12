@@ -79,8 +79,8 @@ def SummarizeUrl(url):
     text = str(article.cleaned_text.encode('utf-8', 'ignore'))
     title = str(article.title.encode('utf-8', 'ignore'))
     summaries = Summarize(title, text)
-    return summaries
 
+    return summaries
 
 def Summarize(title, text):
     summaries = []
@@ -96,7 +96,7 @@ def Summarize(title, text):
     for rank in ranks:
         summaries.append(rank[0])
 
-    return summaries
+    return [title, summaries]
 
 
 def grab_link(inurl):
