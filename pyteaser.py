@@ -83,6 +83,7 @@ def SummarizeUrl(url):
     return summaries
 
 def Summarize(title, text):
+    text = filter(lambda x: x in string.printable, text)
     summaries = []
     sentences = split_sentences(text)
     keys = keywords(text)
